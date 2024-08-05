@@ -28,4 +28,5 @@ func countChar(s string) map[rune]int {
 		}
 	}
 	return ss
+	defer
 }
