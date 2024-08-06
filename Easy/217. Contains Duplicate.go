@@ -1,9 +1,12 @@
 package main
 
 func containsDuplicate(nums []int) bool {
-	array := map[int]bool{}
-	for i := 0; i < len(nums); i++ {
-		array[nums[i]] = true
+	m := make(map[int]bool, len(nums))
+	for _, num := range nums {
+		if _, ok := m[num]; ok {
+			return true
+		}
+		m[num] = true
 	}
-	return len(nums) != len(array)
+	return false
 }
